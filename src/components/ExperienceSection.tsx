@@ -14,6 +14,7 @@ export default function ExperienceSection() {
       company: "EVOP Software House",
       location: "Surabaya",
       type: "Current Position",
+      logo: "/placeholder.svg?height=60&width=60",
       responsibilities: [
         "Develop web applications using Laravel (backend) dan React.js (frontend)",
         "Design dan optimize UI/UX untuk improve user experience",
@@ -29,6 +30,7 @@ export default function ExperienceSection() {
       company: "Himpunan Mahasiswa Teknik Informatika",
       location: "Universitas Airlangga",
       type: "Leadership Role",
+      logo: "/placeholder.svg?height=60&width=60",
       responsibilities: [
         "Lead team dalam development dan maintenance website organisasi",
         "Coordinate team members dalam managing website content",
@@ -44,6 +46,7 @@ export default function ExperienceSection() {
       company: "Enter Komputer",
       location: "Pasuruan",
       type: "Previous Experience",
+      logo: "/placeholder.svg?height=60&width=60",
       responsibilities: [
         "Performed system upgrades dan device performance optimization",
         "Direct customer interaction untuk understand technology needs",
@@ -94,15 +97,23 @@ export default function ExperienceSection() {
               <div className="timeline-content">
                 <div className="experience-card">
                   <div className="card-header">
-                    <div className="experience-meta">
-                      <span className={`experience-type ${exp.type.toLowerCase().replace(" ", "-")}`}>{exp.type}</span>
-                      <span className="experience-period">{exp.period}</span>
+                    <div className="company-logo">
+                      <img src={exp.logo || "/placeholder.svg"} alt={`${exp.company} logo`} className="logo-image" />
                     </div>
 
-                    <h3 className="experience-role">{exp.role}</h3>
-                    <div className="experience-company">
-                      <span className="company-name">{exp.company}</span>
-                      <span className="company-location">📍 {exp.location}</span>
+                    <div className="experience-info">
+                      <div className="experience-meta">
+                        <span className={`experience-type ${exp.type.toLowerCase().replace(" ", "-")}`}>
+                          {exp.type}
+                        </span>
+                        <span className="experience-period">{exp.period}</span>
+                      </div>
+
+                      <h3 className="experience-role">{exp.role}</h3>
+                      <div className="experience-company">
+                        <span className="company-name">{exp.company}</span>
+                        <span className="company-location">📍 {exp.location}</span>
+                      </div>
                     </div>
                   </div>
 
@@ -228,7 +239,27 @@ export default function ExperienceSection() {
         }
         
         .card-header {
+          display: flex;
+          gap: 1.5rem;
           margin-bottom: 1.5rem;
+          align-items: flex-start;
+        }
+
+        .company-logo {
+          flex-shrink: 0;
+        }
+
+        .logo-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 12px;
+          object-fit: cover;
+          border: 2px solid #e2e8f0;
+          background: #f8fafc;
+        }
+
+        .experience-info {
+          flex: 1;
         }
         
         .experience-meta {
@@ -358,16 +389,15 @@ export default function ExperienceSection() {
             padding: 1.5rem;
           }
           
-          .experience-meta {
+          .card-header {
             flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
+            gap: 1rem;
+            align-items: center;
+            text-align: center;
           }
           
-          .experience-company {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.25rem;
+          .experience-info {
+            width: 100%;
           }
         }
       `}</style>
