@@ -2,32 +2,47 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { Points, PointMaterial } from "@react-three/drei"
 import type * as THREE from "three"
 
-function AnimatedParticles() {
-  const pointsRef = useRef<THREE.Points>(null)
-  const [positions] = useState(() => {
-    const positions = new Float32Array(1000 * 3)
-    for (let i = 0; i < 1000; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 10
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 10
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 10
-    }
-    return positions
-  })
+function WireframeGeometry() {
+  const groupRef = useRef<THREE.Group>(null)
 
   useFrame((state) => {
-    if (pointsRef.current) {
-      pointsRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1
-      pointsRef.current.rotation.y = state.clock.elapsedTime * 0.1
+    if (groupRef.current) {
+      groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.2
+      groupRef.current.rotation.y = state.clock.elapsedTime * 0.2
+      groupRef.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.2) * 0.1
     }
   })
 
   return (
-    <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
-      <PointMaterial transparent color="#3b82f6" size={0.02} sizeAttenuation={true} depthWrite={false} opacity={0.6} />
-    </Points>
+    <group ref={groupRef}>
+      {/* Main geometric shapes */}
+      <mesh position={[0, 0, 0]}>
+        <octahedronGeometry args={[1.5, 0]} />
+        <meshBasicMaterial color="#3b82f6" wireframe transparent opacity={0.6} />
+      </mesh>
+
+      <mesh position={[2, 1, -1]}>
+        <tetrahedronGeometry args={[1, 0]} />
+        <meshBasicMaterial color="#2563eb" wireframe transparent opacity={0.7} />
+      </mesh>
+
+      <mesh position={[-2, -0.5, 1]}>
+        <icosahedronGeometry args={[0.8, 0]} />
+        <meshBasicMaterial color="#1d4ed8" wireframe transparent opacity={0.5} />
+      </mesh>
+
+      <mesh position={[1, -2, 0.5]}>
+        <dodecahedronGeometry args={[0.6, 0]} />
+        <meshBasicMaterial color="#3b82f6" wireframe transparent opacity={0.6} />
+      </mesh>
+
+      <mesh position={[-1.5, 1.5, -0.5]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshBasicMaterial color="#2563eb" wireframe transparent opacity={0.4} />
+      </mesh>
+    </group>
   )
 }
 
@@ -56,10 +71,10 @@ export default function HeroSection() {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-background">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <AnimatedParticles />
+        <Canvas camera={{ position: [0, 0, 8], fov: 75 }}>
+          <ambientLight intensity={0.3} />
+          <pointLight position={[10, 10, 10]} intensity={0.5} />
+          <WireframeGeometry />
         </Canvas>
       </div>
 
