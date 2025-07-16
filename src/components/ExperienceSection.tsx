@@ -14,7 +14,7 @@ export default function ExperienceSection() {
       company: "EVOP Software House",
       location: "Surabaya",
       type: "Current Position",
-      logo: "/placeholder.svg?height=80&width=80",
+      logo: "/evop.png?height=80&width=80",
       responsibilities: [
         "Develop web applications using Laravel (backend) dan React.js (frontend)",
         "Design dan optimize UI/UX untuk improve user experience",
@@ -30,7 +30,7 @@ export default function ExperienceSection() {
       company: "Himpunan Mahasiswa Teknik Informatika",
       location: "Universitas Airlangga",
       type: "Leadership Role",
-      logo: "/placeholder.svg?height=80&width=80",
+      logo: "/himti.png?height=80&width=80",
       responsibilities: [
         "Lead team dalam development dan maintenance website organisasi",
         "Coordinate team members dalam managing website content",
