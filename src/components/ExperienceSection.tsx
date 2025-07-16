@@ -46,7 +46,7 @@ export default function ExperienceSection() {
       company: "Enter Komputer",
       location: "Pasuruan",
       type: "Previous Experience",
-      logo: "/placeholder.svg?height=80&width=80",
+      logo: "/enter.jpg?height=80&width=80",
       responsibilities: [
         "Performed system upgrades dan device performance optimization",
         "Direct customer interaction untuk understand technology needs",
