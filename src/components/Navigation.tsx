@@ -41,7 +41,7 @@ export default function Navigation() {
     <nav className={`navigation ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
         <div className="nav-brand">
-          <span>Abdul Alim</span>
+          <span>{"</> Abdul Alim"}</span>
         </div>
 
         <ul className="nav-menu">
