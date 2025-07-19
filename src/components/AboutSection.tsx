@@ -134,10 +134,6 @@ export default function AboutSection() {
             <div className="education-highlight">
               <h3>Education</h3>
               <div className="education-item">
-                {/* <div className="education-header">
-                  <h4>Universitas Airlangga</h4>
-                  <span className="gpa">GPA: 3.59/4.0</span>
-                </div> */}
                 <div className="education-header">
                   <h4>Universitas Airlangga</h4>
                   <span className="year">Semester 4</span>
@@ -165,14 +161,14 @@ export default function AboutSection() {
           <div className="skills-section">
             <h3>Technical Skills & Tools</h3>
 
-            {/* <div className="skills-categories">
+            <div className="skills-categories">
               {skillCategories.map((category) => (
                 <div key={category.name} className="category-badge" style={{ borderColor: category.color }}>
                   <span style={{ color: category.color }}>●</span>
                   {category.name}
                 </div>
               ))}
-            </div> */}
+            </div>
 
             <div className="skills-grid">
               {skills.map((skill, index) => {
