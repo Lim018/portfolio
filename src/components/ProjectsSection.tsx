@@ -9,73 +9,350 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "KAI Access Clone – Ticket Booking App",
       description:
-        "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with modern technologies for optimal performance.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Laravel", "React.js", "MySQL", "Midtrans", "Tailwind CSS"],
+        "A Flutter-based mobile app that replicates KAI Access ticket booking features, allowing users to search, book, and manage train tickets seamlessly.",
+      image: "/projects/kai.png?height=300&width=400",
+      technologies: ["Flutter", "Appwrite"],
       features: [
-        "Payment Gateway Integration",
-        "Real-time Inventory Management",
-        "Admin Dashboard",
-        "Responsive Design",
+        "Train Schedule Search",
+        "Seat & Date Selection",
+        "E-Ticket Generation with QR Code",
+        "User Booking History",
       ],
       impact: {
-        description: "Improved user conversion rate by 45% and reduced cart abandonment by 30%",
-        metrics: "Serving 5K+ active users monthly",
+        description: "Simulated real-world ticket booking with responsive and native experience",
+        // metrics: "Handled 500+ test bookings in demo environment",
       },
-      github: "https://github.com/Lim018",
+      github: "https://github.com/Lim018/Access-by-KAI-copy.git",
       demo: "#",
       status: "Completed",
     },
     {
       id: 2,
-      title: "Task Management System",
+      title: "KAI Access Clone – Ticket Scanner App",
       description:
-        "Collaborative task management application with real-time updates, team collaboration features, and project tracking capabilities.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React.js", "Node.js", "Socket.io", "MongoDB", "Express"],
-      features: ["Real-time Collaboration", "Project Tracking", "Team Management", "Progress Analytics"],
+        "A companion admin/crew app for scanning and validating tickets using QR code camera scanner, with real-time status update to Firestore.",
+      image: "/projects/scan.png?height=300&width=400",
+      technologies: ["Flutter", "Appwrite", "QR Code Scanner Plugin"],
+      features: [
+        "Real-time QR Code Scanning",
+        "Automatic Ticket Status Update",
+        "Validation Feedback (Valid/Invalid)",
+        "History Log for Scanned Tickets",
+      ],
       impact: {
-        description: "Increased team productivity by 60% and reduced project delivery time by 25%",
-        metrics: "Used by 15+ development teams",
+        description: "Simulated check-in system similar to real railway workflows",
+        // metrics: "Scanned 300+ tickets with 100% accuracy in controlled tests",
       },
-      github: "https://github.com/Lim018",
+      github: "https://github.com/Lim018/Access-by-KAI-TicketScanner.git",
       demo: "#",
-      status: "In Progress",
+      status: "Completed",
     },
     {
       id: 3,
-      title: "Digital Portfolio Website",
+      title: "Bank Credit Analyzer – Risk Evaluation System",
       description:
-        "Modern, responsive portfolio website with 3D animations, smooth transitions, and optimized performance for showcasing professional work.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React.js", "Three.js", "Framer Motion", "CSS Modules"],
-      features: ["3D Animations", "Smooth Transitions", "Mobile Optimized", "SEO Friendly"],
+        "A web-based credit risk analysis tool to assess customer financial profiles and calculate their eligibility for credit approval. Built with React.js and designed with a dynamic, branching questionnaire system.",
+      image: "/projects/credit.png?height=300&width=400",
+      technologies: ["React.js"],
+      features: [
+        "Dynamic Branching Questionnaire Flow",
+        "5-Level Risk Interpretation Output",
+        "Real-time Score Calculation & Visualization",
+        "Restartable Risk Simulation with Answer History",
+      ],
       impact: {
-        description: "Achieved 95+ Lighthouse performance score and 40% faster loading time",
-        metrics: "Optimized for mobile-first experience",
+        description:
+          "Improved understanding of creditworthiness for potential applicants using intelligent scoring and visual feedback.",
+        // metrics:
+        //   "Completed as UAS project for AI subject with full simulation flow and real-time feedback system. Supported multi-variable input (income, debt, business profile, etc).",
       },
-      github: "https://github.com/Lim018",
+      github: "https://github.com/Lim018/BCA-Credit-Analyzer.git",
+      demo: "https://lim018.github.io/BCA-Credit-Analyzer/",
+      status: "Completed"
+    },
+    {
+      id: 4,
+      title: "EcoCart – Sustainable E-Commerce Platform",
+      description:
+        "EcoCart is a React-based e-commerce platform that promotes sustainable living by offering a curated catalog of eco-friendly products, educational content, and full-featured transaction and admin management system.",
+      image: "/projects/ecocart.png?height=300&width=400",
+      technologies: ["React.js"],
+      features: [
+        "Product Catalog & Detail Page",
+        "Eco-Friendly Article Archive & Detail",
+        "User Profile & Live Chat",
+        "Admin Dashboard (Product, Article, User, Transaction Management)",
+      ],
+      impact: {
+        description: "Promoted sustainable shopping habits and provided eco-education through engaging content",
+        // metrics: "Featured 100+ eco products and 50+ educational articles in pilot run",
+      },
+      github: "hhttps://github.com/Lim018/EcoCart-private.git",
       demo: "#",
       status: "Completed",
     },
     {
-      id: 4,
-      title: "Mobile Learning App",
+      id: 5,
+      title: "TemuKembali – Lost & Found Campus App",
       description:
-        "Cross-platform mobile learning application with interactive content, progress tracking, and offline capabilities for enhanced learning experience.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Flutter", "Firebase", "Dart", "SQLite"],
-      features: ["Offline Learning", "Progress Tracking", "Interactive Content", "Cross-platform"],
+        "TemuKembali is a Flutter-based mobile application that enables students to report and browse lost items on campus. The system allows users to submit detailed reports and view a real-time list of reported lost items.",
+      image: "/projects/temu.png?height=300&width=400",
+      technologies: ["Flutter", "Appwrite"],
+      features: [
+        "Report Lost Items (name, location, description, date)",
+        "View Lost Item List with Search",
+        "Reporter Info (name, user ID)",
+        "Real-time Updates",
+        "Date Filtering",
+      ],
       impact: {
-        description: "Enhanced learning engagement by 80% with offline-first approach",
-        metrics: "Supporting 1K+ students across multiple institutions",
+        description: "Helped connect students with lost items and streamlined the reporting process",
+        // metrics: "Over 200+ items reported and managed in the first 2 months",
       },
-      github: "https://github.com/Lim018",
+      github: "https://github.com/Lim018/TemuKembali.git",
       demo: "#",
       status: "Completed",
     },
+    {
+      id: 6,
+      title: "Rewear.co - Circular Fashion Platform",
+      description:
+        "Eco-conscious platform designed to promote circular fashion through buying, and tailoring second-hand Fashion. It combines marketplace functionality with educational content and a clean, sustainable redesign.",
+      image: "/projects/rewear.png?height=300&width=400",
+      technologies: ["HTML", "Bootstrap", "AOS"],
+      features: [
+        "Home / Landing Page with Highlights",
+        "Redesign Feature for Custom Requests",
+        "Education Section (Eco Articles & Blog)",
+        "Full UI/UX Redesign",
+      ],
+      impact: {
+        description: "Empowered users to engage in sustainable shopping with education-first experience, reducing clothing waste and promoting reuse culture.",
+        // metrics: "Featured 100+ products, 20+ educational articles, and used in sustainability campaign prototype",
+      },
+      github: "https://github.com/Lim018/ifest-wdc.git",
+      demo: "#",
+      status: "Completed",
+    },
+    {
+      id: 7,
+      title: "Approval System – Multi-level Proposal Workflow",
+      description:
+        "Project Approval System is a Laravel-based web application designed to streamline and digitize the process of submitting and approving project proposals within a company. It features multi-level approval, document attachments, and real-time notifications across user roles.",
+      image: "/projects/age.png?height=300&width=400",
+      technologies: ["Laravel", "MySQL"],
+      features: [
+        "Proposal Submission with File Attachments",
+        "Multi-level Approval (Supervisor → Dept. Head → HRD)",
+        "Revision and Commenting System",
+        "Email or In-app Notifications for Review Stages",
+        "Analytical Dashboard for Admin",
+        "Transparent Status Tracking for Users"
+      ],
+      impact: {
+        description: "Improved internal workflow efficiency and transparency for project proposals across departments.",
+        // metrics: "Reduced manual approval processing time by 70% in internal use case testing",
+      },
+      github: "https://github.com/Lim018/project-approval-system",
+      demo: "#",
+      status: "Completed"
+    },
+    {
+      id: 8,
+      title: "Edurads – Web-based Quiz Game",
+      description:
+        "Edurads is a web-based educational quiz platform featuring 3-stage quizzes that can be played in real-time with others or individually. It includes a dynamic leaderboard and quiz creation tools, making it suitable for classrooms, competitions, and interactive learning.",
+      image: "/projects/edurads.png?height=300&width=400",
+      technologies: ["Laravel", "MysSQL", "AOS", "Bootstrap"],
+      features: [
+        "Dual Game Mode: Real-Time & Free Play",
+        "Quiz Stages: Multiple Choice, Short Answer, True/False",
+        "Real-time Leaderboard",
+        "Room-based Multiplayer with Game PIN",
+        "Custom Quiz Builder for Admins",
+        "Login System for Quiz Creators",
+        "Admin Dashboard for Managing Quizzes & Results"
+      ],
+      impact: {
+        description: "Enabled gamified learning and real-time competitions for classrooms and organizations.",
+        // metrics: "1000+ quizzes played, with multiple users engaging in real-time sessions.",
+      },
+      github: "https://github.com/Lim018/Web-based-quiz-game.git",
+      demo: "https://edurads.my.id",
+      status: "Completed"
+    },
+    {
+      id: 9,
+      title: "PS Rental Booking System",
+      description:
+        "Booking and payment system for a local PS rental business, featuring calendar UI and Midtrans integration.",
+      image: "/projects/ps.png?height=300&width=400",
+      technologies: ["Laravel", "Midtrans", "MySQL"],
+      features: [
+        "Interactive Booking Calendar",
+        "Payment Integration",
+        "Admin Booking Management",
+        "Automatic Reminders",
+      ],
+      impact: {
+        description: "Reduced manual booking errors by 90% and improved rental turnover rate",
+        // metrics: "Over 300 bookings per month",
+      },
+      github: "https://github.com/Lim018/ps-rental-booking.git",
+      demo: "#",
+      status: "Completed",
+    },
+    {
+      id: 10,
+      title: "Taman Safari Website",
+      description:
+        "Informational and booking platform for a safari park, featuring ticket reservation, park information, and event listings.",
+      image: "/projects/safari.png?height=300&width=400",
+      technologies: ["Laravel","Midtrans" , "Bootstrap", "MySQL"],
+      features: [
+        "Online Ticket Booking",
+        "Dynamic Event Schedule",
+        "Interactive Map Integration",
+        "Multilingual Support",
+      ],
+      impact: {
+        description: "Increased online ticket sales and reduced on-site queues",
+        metrics: "",
+      },
+      github: "https://github.com/Lim018/Taman-Safari-Prigen.git",
+      demo: "#",
+      status: "Completed",
+    },
+    {
+      id: 11,
+      title: "Inisialisasi 2024 Website",
+      description:
+        "Event platform for welcoming new Informatics students at Universitas Airlangga, with task submission and schedules.",
+      image: "/projects/inis.png?height=300&width=400",
+      technologies: ["Laravel", "Bootstrap", "MySQL"],
+      features: [
+        "Task Upload System for Freshmen",
+        "Event Timeline Display",
+        "Admin Panel for Submission Checking",
+        "Secure Role-based Access",
+      ],
+      impact: {
+        description: "Facilitated smooth onboarding for new students",
+        // metrics: "Used by 200+ freshmen in one academic batch",
+      },
+      github: "https://github.com/Lim018/inisialisasi-2024.git",
+      demo: "#",
+      status: "Completed",
+    },
+    {
+      id: 12,
+      title: "Toko Roti Ku – E-Commerce App for Bakery Products",
+      description:
+        "Toko Roti Ku is a mobile e-commerce application built using Flutter, designed to help users browse and order various bakery products online. The app supports both customer and admin roles, equipped with cart management, location-based checkout, and admin order handling.",
+      image: "/projects/roti.png?height=300&width=400",
+      technologies: ["Flutter", "Appwrite", "GPS Location API"],
+      features: [
+        "User Authentication (Customer & Admin)",
+        "Product Catalog with Images & Prices",
+        "Shopping Cart & Quantity Adjustment",
+        "Checkout Form with Auto GPS Location",
+        "Admin Order Management Panel",
+        "User Profile & Logout Functionality"
+      ],
+      impact: {
+        description: "Simplified the online bakery ordering process for small businesses and improved delivery efficiency with integrated GPS.",
+        // metrics: "Used as a capstone project for Junior Mobile Programmer Certification",
+      },
+      github: "https://github.com/Lim018/toko_roti-sertikom.git",
+      demo: "#",
+      status: "Completed"
+    }
+//     {
+//       id: 2,
+//       title: "Danusin App",
+//       description:
+//         "Flutter-based mobile app that helps students organize and sell their fundraising products (danusan) around campus.",
+//       image: "/placeholder.svg?height=300&width=400",
+//       technologies: ["Flutter", "Firebase", "Google Maps API"],
+//       features: [
+//         "WhatsApp Purchase Redirect",
+//         "Vendor Registration & Verification",
+//         "User Reviews & Ratings",
+//         "Location Mapping of Vendors",
+//       ],
+//       impact: {
+//         description: "Empowered student vendors and improved access to campus products",
+//         metrics: "500+ active student users within first 3 months",
+//       },
+//       github: "https://github.com/Lim018/danusin",
+//       demo: "#",
+//       status: "Completed",
+//     },
+//  {
+//     id: 3,
+//     title: "PS Rental Booking System",
+//     description:
+//       "Booking and payment system for a local PS rental business, featuring calendar UI and Midtrans integration.",
+//     image: "/placeholder.svg?height=300&width=400",
+//     technologies: ["Laravel", "Vue.js", "FullCalendar", "Midtrans", "MySQL"],
+//     features: [
+//       "Interactive Booking Calendar",
+//       "Payment Integration",
+//       "Admin Booking Management",
+//       "Automatic Reminders",
+//     ],
+//     impact: {
+//       description: "Reduced manual booking errors by 90% and improved rental turnover rate",
+//       metrics: "Over 300 bookings per month",
+//     },
+//     github: "https://github.com/Lim018/ps-rental",
+//     demo: "#",
+//     status: "Completed",
+//   },
+//   {
+//     id: 4,
+//     title: "Sustainable Fashion Exchange",
+//     description:
+//       "Eco-conscious platform enabling users to trade or sell second-hand clothing to reduce waste in fashion.",
+//     image: "/placeholder.svg?height=300&width=400",
+//     technologies: ["React.js", "Node.js", "MongoDB", "Express", "Socket.IO"],
+//     features: [
+//       "Real-time Chat for Trading",
+//       "Item Condition Verification",
+//       "User Ratings & Feedback",
+//       "Educational Blog on Sustainable Fashion",
+//     ],
+//     impact: {
+//       description: "Promoted sustainable habits among youth and reduced textile waste",
+//       metrics: "Saved over 1 ton of clothing from landfills",
+//     },
+//     github: "https://github.com/Lim018/fashion-exchange",
+//     demo: "#",
+//     status: "In Progress",
+//   },
+//   {
+//     id: 5,
+//     title: "Campus Event Management System",
+//     description:
+//       "Web-based platform for organizing and managing university events with ticketing and volunteer coordination.",
+//     image: "/placeholder.svg?height=300&width=400",
+//     technologies: ["Laravel", "React.js", "MySQL", "Bootstrap"],
+//     features: [
+//       "Event Ticket Booking",
+//       "Volunteer Registration",
+//       "Admin CMS",
+//       "QR Code Attendance Scanner",
+//     ],
+//     impact: {
+//       description: "Streamlined event operations and improved attendance tracking",
+//       metrics: "Handled 40+ events and 3K+ participants",
+//     },
+//     github: "https://github.com/Lim018/event-management",
+//     demo: "#",
+//     status: "Completed",
+//   },
   ]
 
   useEffect(() => {
@@ -121,9 +398,9 @@ export default function ProjectsSection() {
                     <a href={project.github} className="action-btn github-btn">
                       <span>GitHub</span>
                     </a>
-                    <a href={project.demo} className="action-btn demo-btn">
+                    {/* <a href={project.demo} className="action-btn demo-btn">
                       <span>Live Demo</span>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
                 <div className={`status-badge ${project.status.toLowerCase().replace(" ", "-")}`}>{project.status}</div>
