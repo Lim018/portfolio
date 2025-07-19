@@ -40,25 +40,25 @@ export default function ContactSection() {
 
   const contactInfo = [
     {
-      icon: "📧",
+      icon: "/logo/email.png?height=40&width=40&text=GitHub",
       label: "Email",
       value: "aa6611059@gmail.com",
       link: "mailto:aa6611059@gmail.com",
     },
     {
-      icon: "📱",
+      icon: "/logo/wa.png?height=40&width=40&text=GitHub",
       label: "Phone",
       value: "085732007986",
       link: "tel:+62085732007986",
     },
     {
-      icon: "📍",
+      icon: "/logo/loc.png?height=0&width=40&text=GitHub",
       label: "Location",
       value: "Surabaya, Jawa Timur",
       link: "#",
     },
     {
-      icon: "💼",
+      icon: "/logo/github2.png?height=40&width=40&text=GitHub",
       label: "GitHub",
       value: "github.com/Lim018",
       link: "https://github.com/Lim018",
@@ -69,17 +69,17 @@ export default function ContactSection() {
     {
       name: "GitHub",
       url: "https://github.com/Lim018",
-      icon: "🔗",
+      icon: "/logo/github.svg?height=20&width=20&text=GitHub",
     },
     {
       name: "LinkedIn",
       url: "#",
-      icon: "💼",
+      icon: "/logo/linkedin.png?height=0&width=40&text=GitHub",
     },
     {
       name: "WhatsApp",
       url: "https://wa.me/62085732007986",
-      icon: "💬",
+      icon: "/logo/wa2.png?height=20&width=20&text=GitHub",
     },
   ]
 
@@ -110,7 +110,10 @@ export default function ContactSection() {
                   target={info.link.startsWith("http") ? "_blank" : "_self"}
                   rel={info.link.startsWith("http") ? "noopener noreferrer" : ""}
                 >
-                  <span className="contact-icon">{info.icon}</span>
+                  {/* <span className="contact-icon">{info.icon}</span> */}
+                  <div className="contact-logo">
+                    <img src={info.icon || "/placeholder.svg"} alt={`${info.label} logo`} className="contact-image" />
+                  </div>
                   <div className="contact-text">
                     <span className="contact-label">{info.label}</span>
                     <span className="contact-value">{info.value}</span>
@@ -124,7 +127,8 @@ export default function ContactSection() {
               <div className="social-buttons">
                 {socialLinks.map((social, index) => (
                   <a key={index} href={social.url} className="social-btn" target="_blank" rel="noopener noreferrer">
-                    <span className="social-icon">{social.icon}</span>
+                    {/* <span className="social-icon">{social.icon}</span> */}
+                    <img src={social.icon || "/placeholder.svg"} alt={`${social.name} logo`} className="social-image" />
                     <span>{social.name}</span>
                   </a>
                 ))}
@@ -493,6 +497,26 @@ export default function ContactSection() {
         .footer-content p:first-child {
           font-weight: 600;
           color: white;
+        }
+
+        .contact-logo {
+          flex-shrink: 0;
+        }
+
+        .contact-image {
+          width: 40px;
+          height: 40px;
+          border-radius: 0px;
+          object-fit: cover;
+        }
+
+        .social-image {
+          width: 20px;
+          height: 20px;
+          border-radius: 12px;
+          object-fit: cover;
+          border: 2px solid #e2e8f0;
+          background: #f8fafc;
         }
         
         @keyframes spin {
