@@ -7,14 +7,91 @@ export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
   const skills = [
-    { name: "JavaScript (React.js)", level: 90 },
-    { name: "PHP (Laravel)", level: 85 },
-    { name: "Python", level: 80 },
-    { name: "RESTful API", level: 88 },
-    { name: "Figma", level: 75 },
-    { name: "GitHub", level: 85 },
-    { name: "ClickUp", level: 70 },
-    { name: "Postman", level: 80 },
+    {
+      name: "JavaScript",
+      category: "Programming",
+      icon: "/placeholder.svg?height=40&width=40&text=JS",
+      color: "#F7DF1E",
+    },
+    {
+      name: "React.js",
+      category: "Frontend",
+      icon: "/placeholder.svg?height=40&width=40&text=React",
+      color: "#61DAFB",
+    },
+    {
+      name: "PHP",
+      category: "Backend",
+      icon: "/placeholder.svg?height=40&width=40&text=PHP",
+      color: "#777BB4",
+    },
+    {
+      name: "Laravel",
+      category: "Framework",
+      icon: "/placeholder.svg?height=40&width=40&text=Laravel",
+      color: "#FF2D20",
+    },
+    {
+      name: "Python",
+      category: "Programming",
+      icon: "/placeholder.svg?height=40&width=40&text=Python",
+      color: "#3776AB",
+    },
+    {
+      name: "MySQL",
+      category: "Database",
+      icon: "/placeholder.svg?height=40&width=40&text=MySQL",
+      color: "#4479A1",
+    },
+    {
+      name: "Figma",
+      category: "Design",
+      icon: "/placeholder.svg?height=40&width=40&text=Figma",
+      color: "#F24E1E",
+    },
+    {
+      name: "GitHub",
+      category: "Version Control",
+      icon: "/placeholder.svg?height=40&width=40&text=GitHub",
+      color: "#181717",
+    },
+    {
+      name: "ClickUp",
+      category: "Project Management",
+      icon: "/placeholder.svg?height=40&width=40&text=ClickUp",
+      color: "#7B68EE",
+    },
+    {
+      name: "Postman",
+      category: "API Testing",
+      icon: "/placeholder.svg?height=40&width=40&text=Postman",
+      color: "#FF6C37",
+    },
+    {
+      name: "Flutter",
+      category: "Mobile",
+      icon: "/placeholder.svg?height=40&width=40&text=Flutter",
+      color: "#02569B",
+    },
+    {
+      name: "Node.js",
+      category: "Backend",
+      icon: "/placeholder.svg?height=40&width=40&text=Node",
+      color: "#339933",
+    },
+  ]
+
+  const skillCategories = [
+    { name: "Programming", color: "#3b82f6" },
+    { name: "Frontend", color: "#10b981" },
+    { name: "Backend", color: "#f59e0b" },
+    { name: "Framework", color: "#ef4444" },
+    { name: "Database", color: "#8b5cf6" },
+    { name: "Design", color: "#ec4899" },
+    { name: "Version Control", color: "#6b7280" },
+    { name: "Project Management", color: "#06b6d4" },
+    { name: "API Testing", color: "#f97316" },
+    { name: "Mobile", color: "#84cc16" },
   ]
 
   useEffect(() => {
@@ -82,25 +159,45 @@ export default function AboutSection() {
           </div>
 
           <div className="skills-section">
-            <h3>Technical Skills</h3>
-            <div className="skills-grid">
-              {skills.map((skill, index) => (
-                <div key={skill.name} className="skill-item">
-                  <div className="skill-header">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div
-                      className="skill-progress"
-                      style={{
-                        width: isVisible ? `${skill.level}%` : "0%",
-                        transitionDelay: `${index * 0.1}s`,
-                      }}
-                    />
-                  </div>
+            <h3>Technical Skills & Tools</h3>
+
+            {/* <div className="skills-categories">
+              {skillCategories.map((category) => (
+                <div key={category.name} className="category-badge" style={{ borderColor: category.color }}>
+                  <span style={{ color: category.color }}>●</span>
+                  {category.name}
                 </div>
               ))}
+            </div> */}
+
+            <div className="skills-grid">
+              {skills.map((skill, index) => {
+                const category = skillCategories.find((cat) => cat.name === skill.category)
+                return (
+                  <div
+                    key={skill.name}
+                    className={`skill-card ${isVisible ? "visible" : ""}`}
+                    style={{
+                      animationDelay: `${index * 0.1}s`,
+                    }}
+                  >
+                    <div className="skill-icon-container">
+                      <img
+                        src={skill.icon || "/placeholder.svg"}
+                        alt={`${skill.name} icon`}
+                        className="skill-icon"
+                        style={{ backgroundColor: skill.color + "20" }}
+                      />
+                    </div>
+                    <div className="skill-info">
+                      <h4 className="skill-name">{skill.name}</h4>
+                      <span className="skill-category" style={{ color: category?.color || "#64748b" }}>
+                        {skill.category}
+                      </span>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -220,51 +317,91 @@ export default function AboutSection() {
           color: #1e293b;
           margin-bottom: 2rem;
         }
+
+        .skills-categories {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .category-badge {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          background: #f8fafc;
+          border: 1px solid;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: #64748b;
+        }
         
         .skills-grid {
-          display: flex;
-          flex-direction: column;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
           gap: 1.5rem;
         }
         
-        .skill-item {
+        .skill-card {
           background: #ffffff;
           padding: 1.5rem;
-          border-radius: 12px;
+          border-radius: 16px;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
           border: 1px solid #e2e8f0;
+          text-align: center;
+          transition: all 0.3s ease;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        .skill-card.visible {
+          opacity: 1;
+          transform: translateY(0);
         }
         
-        .skill-header {
+        .skill-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon-container {
+          margin-bottom: 1rem;
           display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 0.75rem;
+          justify-content: center;
+        }
+        
+        .skill-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 8px;
+          padding: 8px;
+          transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon {
+          transform: scale(1.1);
+        }
+
+        .skill-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
         }
         
         .skill-name {
           font-weight: 600;
           color: #1e293b;
+          font-size: 0.95rem;
+          margin: 0;
         }
         
-        .skill-percentage {
-          font-size: 0.9rem;
-          color: #2563eb;
-          font-weight: 600;
-        }
-        
-        .skill-bar {
-          height: 8px;
-          background: #e2e8f0;
-          border-radius: 4px;
-          overflow: hidden;
-        }
-        
-        .skill-progress {
-          height: 100%;
-          background: linear-gradient(90deg, #2563eb, #3b82f6);
-          border-radius: 4px;
-          transition: width 1s ease-out;
+        .skill-category {
+          font-size: 0.8rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
         
         @media (max-width: 768px) {
@@ -281,6 +418,19 @@ export default function AboutSection() {
             flex-direction: column;
             align-items: flex-start;
             gap: 0.5rem;
+          }
+
+          .skills-grid {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+          }
+
+          .skill-card {
+            padding: 1rem;
+          }
+
+          .skills-categories {
+            justify-content: center;
           }
         }
       `}</style>
