@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import Navigation from "./components/Navigation"
 import ScrollProgress from "./components/ScrollProgress"
 import HeroSection from "./components/HeroSection"
