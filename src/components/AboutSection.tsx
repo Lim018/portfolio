@@ -74,7 +74,7 @@ export default function AboutSection() {
       color: "#02569B",
     },
     {
-      name: "Node.js",
+      name: "Appwrite",
       category: "Database",
       icon: "/logo/appwrite.svg?height=40&width=40&text=Node",
       color: "#339933",
